@@ -1,0 +1,68 @@
+<div class="panel-body">
+        <div class="row pull-right">
+            <div class="col-xs-12">
+                    <div>
+                            <span class="hi-style">Hi {{currentUser.name}}!</span>
+                            <a [routerLink]="['/login']">Logout</a>
+                    </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+</div>
+<div class="row search-form" >
+    <div class="col-sm-2 ">
+      <strong>Search:</strong>
+      </div>
+      
+    <div class="col-sm-10">
+      <input type="text" name="searchText" class="form-control" placeholder="Search By Name" [(ngModel)] = "searchText" [ngModelOptions]="{standalone: true}" (keyup)= "searchPlanet()">
+    </div>
+</div>
+
+<div *ngIf= "planetData.length == 0" class="alert-danger margin30">
+No data found
+</div>
+<table *ngIf= "planetData.length > 0" class="margin30">
+    <tr>
+        <th>Name</th>
+        <th>Population</th>
+    </tr>
+    <tr *ngFor= "let planet of planetData" (click) = "showPlanetDetails(planet)" [ngClass]="{'font20': planet.population > 6000000}">
+        <td>{{planet.name}}</td>
+        <td>{{planet.population}}</td>
+    </tr>
+</table>
+
+<div *ngIf= "planetDetail" class="margin30">
+        <h4>Planet Details:  {{planetDetail.name}}</h4>
+        <div>
+            <label>Climate: </label> {{planetDetail.climate}}
+        </div>
+        <div>
+            <label>Created: </label> {{planetDetail.created | date : 'dd/MM/yyyy'}}
+        </div>
+        <div>
+            <label>Diameter: </label> {{planetDetail.diameter}}
+        </div>
+        <div>
+            <label>Edited: </label> {{planetDetail.edited | date : 'dd/MM/yyyy'}}
+        </div>
+        <div>
+            <label>Gravity: </label> {{planetDetail.gravity}}
+        </div>
+        <div>
+            <label>Orbital Period: </label> {{planetDetail.orbital_period}}
+        </div>
+        <div>
+            <label>Population: </label> {{planetDetail.population}}
+        </div>
+        <div>
+            <label>Rotation Period: </label> {{planetDetail.rotation_period}}
+        </div>
+        <div>
+            <label>Surface Water: </label> {{planetDetail.surface_water}}
+        </div>
+        <div>
+            <label>Terrain: </label> {{planetDetail.terrain}}
+        </div>
+</div>

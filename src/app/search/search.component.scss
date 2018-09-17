@@ -1,0 +1,28 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    min-width: 250px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.margin30 {
+    margin-top: 30px
+}
+
+.search-form{margin-top:30px; }
+
+.search-form strong{display: inline-block;margin-top: 5px; }
+.font20{font-size: 20px;}
+.hi-style{font-size: 22px;
+    font-weight: bold;
+    margin-right: 10px;}
