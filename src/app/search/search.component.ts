@@ -39,6 +39,7 @@ export class SearchComponent implements OnInit {
 
     searchPlanet(){
         this.planetDetail = null;
+        this.alertService.error('');
         if (!this.firstSearch) {
             this.lastOneMinute = new Date();
         }
